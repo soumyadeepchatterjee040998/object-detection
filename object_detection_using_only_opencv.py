@@ -37,8 +37,8 @@ def findbox(outputs,img):
         conf = int(prob[index]*100)
         classId = classIds[index]
         cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,255),2)
-        cv.putText(img,f'{classnames[classIds[index]].upper()} {int(prob[index]*100)}%',
-                  (x, y-10), cv.FONT_HERSHEY_SIMPLEX, 0.6, (255, 0, 255), 2)  
+        cv2.putText(img,f'{classnames[classIds[index]].upper()} {int(prob[index]*100)}%',
+                  (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 0, 255), 2)  
 cap = cv2.VideoCapture(0)
 time.sleep(3)
 while(cap.isOpened()):
